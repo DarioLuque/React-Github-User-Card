@@ -10,10 +10,15 @@ import './App.css'
 
 
 class App extends React.Component {
-  state = {
-    user: {},
-    followers: []
-  };
+  constructor() {
+    super();
+    this.state = {
+      user: {},
+      followers: []
+    };
+
+  }
+
 
   componentDidMount() {
     // User Data
