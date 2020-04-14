@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import GitHubCalendar from 'react-github-calendar';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 
 
 class UserCard extends React.Component {
+
   render() {
+    
     return(
       <UserContainer>
         <UserHeader>
@@ -21,8 +25,9 @@ class UserCard extends React.Component {
           <h5>Followers: {this.props.user.followers} </h5>
           <p>Bio: {this.props.user.bio} </p>
           <h4>Repos: {this.props.user.public_repos} </h4>
+          <GitHubCalendar username="DarioLuque" />
         </InfoDiv>
-
+        
         </UserHeader>
       </UserContainer>
     );
@@ -34,11 +39,9 @@ export default UserCard;
 // styles
 const UserContainer = styled.div`
   background: white;
-  border: 2px double black;
   border-radius: 1rem;
   margin: 0 auto;
-  width: 50%;
-  height: 25%;
+  width: 60%;
 
   p {
     text-align: center;
@@ -65,15 +68,25 @@ const ImgCon = styled.div`
 
   a {
     color: black;
+
+    &:hover {
+      color: green;
+    }
   }
 
   img {
-    width: 90%
+    margin: 5%;
+    box-shadow: 2px 10px 10px grey;
+    border-radius: 1rem;
+    width: 90%;
+
+    
   }
 `;
 
 const InfoDiv = styled.div`
-  width: 80%;
+  margin-right: 2%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
